@@ -1,8 +1,10 @@
 from django.http import JsonResponse
 
+from .models import Todo
+
 
 # Create your views here.
 def index(request):
-    data = [1, 2, 3, 4, 5]
+    todos = Todo.objects.all()
 
-    return JsonResponse(data, safe=False, status=400)
+    return JsonResponse(todos, safe=False, status=200)

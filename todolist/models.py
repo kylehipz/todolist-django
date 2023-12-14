@@ -8,3 +8,6 @@ class Todo(models.Model):
     priority = models.CharField(
         choices=(("low", "Low"), ("high", "High")), max_length=4
     )
+
+    def __str__(self):  # type: ignore
+        return self.name
